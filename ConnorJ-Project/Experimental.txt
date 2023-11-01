@@ -1,0 +1,46 @@
+
+
+Redraw the navigation line to match the activenav
+
+/*
+window.onscrollend = () => {
+
+    navigationlinks.forEach(links => {
+        let activetrue = links.classList.contains('active');
+
+        if (activetrue == true) {
+            let activenav = links.getAttribute('href');
+
+            //console.log("active href : ", activenav);
+
+            const element = document.querySelector('.active');
+            //let style = getComputedStyle(element, '::before');
+            
+
+            //console.log("current width : ", style.width);
+
+            switch (String(activenav)) {
+                case '#home':
+                    element.style.setProperty('--width', '95vh');
+                    break;
+                case '#about':
+                    element.style.setProperty('--width', '20vh');
+                    break;
+                case '#projects':
+                    element.style.setProperty('--width', '20vh');
+                    break;
+                case '#contact':
+                    element.style.setProperty('--width', '20vh');
+                    break;
+                default:
+
+                    break;
+
+            }
+
+        }
+
+    })
+}
+*/
+

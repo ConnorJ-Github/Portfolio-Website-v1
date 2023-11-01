@@ -1,0 +1,844 @@
+:root {
+
+  /* base properties for website styling*/
+
+
+  --primary-clr1: hsl(0, 0%, 100%);
+  --primary-clr2: hsl(0, 0%, 0%);
+
+  /* accent colour (button underlines etc) */
+  --accent-clr1: hsl(0, 55%, 33%);
+
+  /* default font across the site */
+  --primary-font: 'Quicksand', sans-serif;
+
+
+  /* available fonts*/
+  /*font-family: 'Quicksand', sans-serif;*/
+  /*font-family: 'Merriweather', serif;*/
+
+  --primary-heading-font: var(--primary-font);
+  --primary-body-font: var(--primary-font);
+
+
+  /* font weights*/
+  --bold-font-weight: 700;
+  --regular-font-weight: 400;
+
+
+  /* font size */
+  --fs-nav: 1.5rem;
+
+
+  /* home page font sizes */
+  --fs-home-page-header: 5rem;
+  --fs-home-page-text: 2rem;
+
+  --fs-home-page-header-mobile: 2.3rem;
+  --fs-home-page-text-mobile: 1.4rem;
+
+  /* secondary page font sizes */
+  --fs-secondary-page-headers: 3.125rem;
+  --fs-secondary-page-text: 1.188rem;
+
+  /* font size for languages,tools, working knowledge of */
+  --fs-skills-headers: 2.5rem;
+
+  /* font size for contact form*/
+  --fs-contact-form: 1.875rem;
+
+
+  /* shadow effects for text decoration*/
+  --txt-shadow-dark: hsl(0, 0%, 15%);
+  --txt-shadow-light: hsl(0, 10%, 80%);
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.background-primary-dark {
+  color: var(--primary-clr1);
+}
+
+.background-primary-light {
+  color: var(--primary-clr2);
+}
+
+.text-primary-dark {
+  color: var(--primary-clr2);
+}
+
+.text-primary-light {
+  color: var(--primary-clr1);
+}
+
+.font-bold {
+  font-weight: var(--bold-font-weight);
+}
+
+.font-regular {
+  font-weight: var(--regular-font-weight);
+}
+
+
+.fs-primary-heading {
+  font-size: var(--fs-home-page-header);
+}
+
+.fs-primary-heading-text {
+  font-size: var(--fs-home-page-text);
+}
+
+.fs-primary-heading-mobile {
+  font-size: var(--fs-home-page-header-mobile);
+}
+
+.fs-primary-heading-text-mobile {
+  font-size: var(--fs-home-page-text-mobile);
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-page-headers);
+}
+
+.fs-secondry-heading-text {
+  font-size: var(--fs-secondary-page-text);
+}
+
+.fs-skills-heading {
+  font-size: var(--fs-skills-headers);
+}
+
+.fs-contact-form {
+  font-size: var(--fs-contact-form);
+}
+
+
+/* Styling */
+
+body {
+  font-family: var(--primary-body-font);
+  background-color: var(--primary-clr1);
+  color: var(--primary-clr2);
+
+}
+
+
+/*spacing between each page as well as the space allowed
+for each section (home, about, projects and contact)*/
+
+.container {
+
+  /* height and width properties*/
+  --max-width: 100vh;
+  --max-height: 100vh;
+  --padding: 1rem;
+
+  /* heigth and width of each section/container */
+  height: min(var(--max-height));
+  width: min(var(--max-width), 100% - var(--padding) * 8);
+
+
+  /* ensures the container is centered*/
+  margin-inline: auto;
+
+  display: grid;
+  justify-content: center;
+
+}
+
+
+/* Navigation */
+
+/* The header contains the logo and the navigation bar*/
+header {
+
+  /* centers the items to the middle of the page  */
+  justify-content: space-between;
+
+  /* ensures items are aligned in the center of the header box*/
+  align-items: center;
+
+  /* aligns items into a row */
+  display: flex;
+
+  /* ensures the header remains fixed on the page */
+  position: fixed;
+
+  /* positioning */
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+
+  z-index: 999;
+}
+
+
+/* menu container, contains the logo and nav*/
+
+.menu-container {
+
+  /* The width allowed by the menu-container */
+  width: 100%;
+  max-width: 1200px;
+
+
+  /*  items are spaced evenly within the div*/
+  justify-content: space-evenly;
+
+
+  /* aligns items to the center*/
+  align-items: center;
+
+  /* centers the container */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* aligns items into a row */
+  display: flex;
+
+  /* adds a transition affect, when returning to top of page */
+  transition: 3s;
+
+}
+
+/* resizes the nav upon scrolling & adds decoration */
+
+.menu-container.dark-background {
+
+  /* controls the width of the menu-cotainer */
+  width: 700px;
+  height: 65px;
+
+  /* seperates the container from the edge of the browser */
+  margin-top: 1rem;
+
+  /* background effects */
+  background: hsl(0, 0%, 0%, 0.016);
+  /*0.016 opactity*/
+
+  /* may be unsupported in firefox, adds a blur effect */
+  backdrop-filter: blur(15px);
+
+  /* decoration which effects the "corners"*/
+  border-radius: 30px;
+
+  /* transition effect when seperating from the top of the screen */
+  transition: 3s;
+
+}
+
+
+
+/* controls the list properties of the navigation bar*/
+.nav-list {
+
+  /* provides a margin around each list item,
+  seperating it from the top of the page. */
+  margin: 2em;
+
+  /* removes the bullet-points from the list*/
+  list-style-type: none;
+
+
+  /* displays the list items in a row rather than a column*/
+  display: flex;
+
+  /* provides spacing between each list item*/
+  gap: 4rem;
+
+
+}
+
+/* controls the font-size and weight of each item within the list*/
+ul.nav-list {
+
+  font-size: 16px;
+  font-weight: var(--bold-font-weight);
+
+}
+
+
+/* controls the hyperlink decoration properties */
+.nav-list a {
+
+  position: relative;
+  /* removes the default underline text decoration*/
+  text-decoration: none;
+
+  /* controls the text colour*/
+  color: var(--primary-clr2);
+
+
+}
+
+/* nav text decoration for when a section is active */
+
+.nav-list a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-clr1);
+
+  transition: 1s;
+}
+
+
+/* Add decorations for when an nav item is hovered over */
+
+.nav-list a:hover {
+  text-decoration: underline var(--accent-clr1);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+}
+
+/* Add decorations for current section, 
+sets the line width to 100% */
+.nav-list a.active::before {
+
+  width: 100%;
+}
+
+/* nav bar mobile re-sizing */
+
+@media (max-width: 650px) {
+
+  header {
+    display: none;
+  }
+}
+
+
+
+/* homepage */
+
+/* grid which contains the homepage content */
+.home-grid {
+  display: grid;
+
+  /* Spacing between grid items */
+  gap: 2rem;
+
+  /* column layout,
+   left colums take up 60% of the available space
+   right columns take up 40% of the space */
+  grid-template-columns: 60% 40%;
+
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+
+
+  /* Ensures content is centered */
+  margin-inline: auto;
+
+  margin-top: 20vh;
+
+}
+
+/* home page paragraph text */
+.introduction p {
+  width: 95%;
+}
+
+/* keyboard image located on the homepage. */
+.introduction-image {
+
+  /* image is rotated by 5deg. */
+  rotate: 5deg;
+}
+
+
+/* Resume  button located on the homepage.*/
+.resume-button {
+
+  text-decoration: none;
+
+  border: 1px solid black;
+  border-radius: 1rem;
+
+  padding: 0.2rem 1rem;
+
+  color: var(--primary-clr2);
+  font-weight: var(--bold-font-weight);
+  font-size: x-large;
+
+}
+
+/* resume button hover effect */
+
+.resume-button:hover {
+
+  background-color: hsl(0, 0%, 0%, 0.07);
+}
+
+
+/* Homepage media resizing at 1000px width. */
+
+@media (max-width: 1000px) {
+
+  .introduction h1 {
+    font-size: var(--fs-home-page-header-mobile);
+  }
+
+  .introduction p {
+    font-size: var(--fs-home-page-text-mobile);
+  }
+
+  .home-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .introduction-image {
+    display: none;
+  }
+
+  .resume-button {
+    font-size: large;
+  }
+
+}
+
+
+/*about*/
+
+
+/* grid-container which controls the about page layout */
+
+.about-grid {
+  display: grid;
+
+  width: 1200px;
+
+  /* Spacing between grid items */
+  gap: 2rem;
+
+
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+
+
+  /* Ensures content is centered */
+  margin-inline: auto;
+
+  margin-top: 10vh;
+
+}
+
+/* padding between each line*/
+.about-text p {
+  padding-bottom: 20px;
+}
+
+/* Spacing between the header "hello" and the about text */
+#hello {
+  padding-bottom: 10px;
+}
+
+/* grid and layout controls for the skills (Languages, Tools, working knowledge) */
+.skills {
+  display: grid;
+  gap: 2rem;
+
+  grid-template-columns: 33% 33% 33%;
+
+  text-align: center;
+}
+
+/* removes list styling on each item */
+.skills li {
+  list-style-type: none;
+}
+
+
+/* removes link styling fron each item */
+.skills li a {
+  text-decoration: none;
+  color: black;
+
+}
+
+/* spacing and icon sizing */
+#icons {
+  padding: 10px;
+
+  height: 25px;
+  width: 25px;
+}
+
+/* icons positioning */
+.languageslist,
+.toolslist,
+.working-knowledgelist {
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* addition grid to manage spacing and positioning, primarily the contese (icons or text)*/
+.info-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 2px;
+
+}
+
+/* Positioning and resizing of the word "knowledge" */
+#reduce-size {
+  font-size: 1rem;
+  position: relative;
+
+  bottom: 15px;
+}
+
+#working-knowledge-position {
+  position: relative;
+
+  align-items: center;
+}
+
+/* Mobile resizing */
+
+@media (max-width: 1000px) {
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #hello {
+    font-size: small;
+  }
+
+  .about-text p {
+    font-size: small;
+  }
+
+  .languages h2,
+  .tools h2,
+  .working-knowledge h2 {
+    font-size: small;
+  }
+
+  #container-aboutpage {
+    height: 180vh;
+  }
+
+  #reduce-size {
+    bottom: 5px;
+  }
+
+}
+
+/* projects */
+
+.projects-grid {
+  display: grid;
+
+  /* Spacing between grid items */
+  gap: 2rem;
+
+
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+
+  /* Ensures content is centered */
+  margin-inline: auto;
+
+}
+
+
+/* header positioning */
+.projects h1 {
+  padding-top: 10vh;
+}
+
+/* table styling */
+table {
+
+  width: 90vh;
+  table-layout: auto;
+  border-collapse: collapse;
+
+}
+
+th,
+td {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+tr {
+
+  border-bottom: 1pt solid black;
+}
+
+th {
+  text-align: left;
+}
+
+/*  media resizing */
+@media (max-height:951px) {
+  table {
+    width: 100vh;
+  }
+
+  ;
+
+  .projects h1 {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 650px) {
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: block;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  #container-projects {
+
+    height: 140vh;
+  }
+}
+
+/* Contact page */
+
+.contact-grid {
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  /* Spacing between grid items */
+  gap: 2rem;
+
+
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+
+  /* Ensures content is centered */
+  margin-inline: auto;
+
+
+  padding-top: 35vh;
+}
+
+.contact-nav ul {
+  display: grid;
+
+  gap: 5rem;
+
+  list-style-type: none;
+
+}
+
+.contact-nav a,
+.email-text {
+  text-decoration: none;
+  color: black;
+
+  font-weight: var(--bold-font-weight);
+  font-style: var(--primary-heading-font);
+}
+
+.contact-nav {
+
+  height: 0px;
+}
+
+
+#form-header {
+  font-weight: var(--bold-font-weight);
+}
+
+/* tyling for email and name input */
+
+input {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+
+  margin-left: 1rem;
+
+  margin-bottom: 1rem;
+
+}
+
+
+/* styling for message */
+textarea {
+  border-radius: 10px;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+
+  width: 100%;
+}
+
+/* styling for submit button */
+.submit-btn {
+
+  text-decoration: none;
+
+  border: 1px solid black;
+  border-radius: 1rem;
+
+  padding: 0.2rem 1rem;
+
+  color: var(--primary-clr2);
+  font-weight: var(--bold-font-weight);
+  font-size: large;
+
+  margin-left: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: hsl(0, 0%, 0%, 0.09);
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+
+  .contact-grid {
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+
+  .contact-nav {
+    position: relative;
+    top: -30vh;
+  }
+
+}
+
+
+/* Bobbing Arrow controls */
+
+/* Positioning, animation and basic styling */
+
+.scroll-down-alert {
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-down-image {
+  animation: float 3s ease-in-out infinite;
+
+  rotate: 2deg;
+}
+
+
+@keyframes float {
+  0% {
+
+    transform: translatey(0px);
+  }
+
+  50% {
+
+    transform: translatey(-20px);
+  }
+
+  100% {
+
+    transform: translatey(0px);
+  }
+
+}
+
+
+/* Arrow position for the homep age */
+#arrow-home {
+  margin-top: 25vh;
+}
+
+/* arrow position for the about page. */
+#arrow-about {
+
+  margin-top: 10vh;
+}
+
+/* arrow position for the projects page */
+#arrow-projects {
+  margin-top: 10vh;
+}
+
+
+/* re-positioning for mobile or smaller screens */
+@media (max-height:951px) {
+  #arrow-home {
+    margin-top: 5vh;
+  }
+
+  #arrow-about {
+    margin-top: -7vh;
+  }
+
+  #arrow-projects {
+    margin-top: 20vh;
+  }
+
+}
