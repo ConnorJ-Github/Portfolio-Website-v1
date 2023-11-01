@@ -1,6 +1,6 @@
 # Portfolio Website V1
 
-Connorj.tech
+[Connorj.tech](https://connorj.tech/#home)
 
 This is Version 1 of my portfolio website.
 
