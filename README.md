@@ -1,5 +1,7 @@
 # Portfolio Website V1
 
+Connorj.tech
+
 This is Version 1 of my portfolio website.
 
 This was created with HTML, CSS and Javascript. 
